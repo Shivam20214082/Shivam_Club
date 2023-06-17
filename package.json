@@ -9,5 +9,16 @@
     "mongoose": "^7.3.0",
     "nodemon": "^2.0.22",
     "path": "^0.12.7"
-  }
+  },
+  "name": "forum",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

@@ -90,6 +90,7 @@ body {
   }
   
   .post {
+    width: 65%;
     margin-bottom: 20px;
     padding: 20px;
     border: solid gray;
