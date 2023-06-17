@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shivam Club</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Shivam Club</h1>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            {{#if authenticated}}
+              <li><a href="/posts/create">Create Post</a></li>
+            {{/if}}
+            <li class="login-btn">
+              {{#if authenticated}}
+                <a href="/logout" >Logout</a>
+              {{else}}
+                <a href="/login" >Login</a>
+              {{/if}}
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        {{{body}}}
+      </main>
+
+      <footer>
+        &copy; 2023 Forum
+      </footer>
+    </div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>

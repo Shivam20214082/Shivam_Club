@@ -1,0 +1,20 @@
+{{#each posts}}
+  <div class="post">
+    <div class="heading">
+      <h2>Title: {{title}}</h2>
+      <div class="like">
+        <form action="/posts/like/{{_id}}" method="POST" class="like-form">
+          <input type="hidden" name="_method" value="PUT">
+          <input type="number" name="like-count" id="like-cnt" value="{{likes.length}}" readonly>
+          <button type="submit" {{#if likedByUser}}disabled{{/if}}>Like</button>
+        </form>
+      </div>
+    </div>
+    <h3>Content:</h3>
+    <p style="margin-bottom: 20px;">{{content}}</p>
+    <p><b>Created at: </b>{{createdAt}}</p>
+    <p><b>Created By: </b>{{username}}</p>
+  </div>
+{{else}}
+  <p>No posts available</p>
+{{/each}}

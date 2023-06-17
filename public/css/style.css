@@ -1,0 +1,222 @@
+/* Add your desired CSS styles here */
+*{
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #d11a1a; */
+  }
+  
+  .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+  main {
+    flex: 1;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: #fefefe;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+  .logo a {
+    font-size: 24px;
+    color: #880b0b;
+    text-decoration: none;
+  }
+  
+  .login-btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4ebff3;
+    color: #f8f6f6;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn a:hover {
+    color: #333;
+    background-color: #eee;
+    text-decoration: none;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    font-weight: bold;
+    color: #e7dddd;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  main {
+    /* max-width: 800px; */
+    /* margin: 20px auto; */
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: solid gray;
+    border-radius: 10px;
+  }
+  
+  footer {
+    margin-top: auto;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+
+
+  form {
+    width: 55%;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  form input[type="text"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1.5px solid #cccccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+
+  form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  form button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+
+  .post {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.heading h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.like-form {
+  display: flex;
+  align-items: center;
+}
+
+.like-form input[name="like-count"] {
+  width: 40px;
+  text-align: center;
+  border: none;
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.like-form button {
+  margin-left: 10px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.like-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+p {
+  margin: 0;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 600px) {
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heading h2 {
+    font-size: 18px;
+  }
+
+  .like-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .like-form button {
+    margin-top: 10px;
+  }
+}
