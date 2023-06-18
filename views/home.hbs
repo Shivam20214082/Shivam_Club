@@ -2,6 +2,16 @@
   <div class="post">
     <div class="heading">
       <h2>Title: {{title}}</h2>
+      {{!-- {{#if isAuthor}} --}}
+        <div class="edit" style="background-color: #4CAF50;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;">
+          <a href="/posts/edit/{{_id}}" style="color: white; text-decoration: none;">Edit</a>
+        </div>
+      {{!-- {{/if}} --}}
       <div class="like">
         <form action="/posts/like/{{_id}}" method="POST" class="like-form">
           <input type="hidden" name="_method" value="PUT">

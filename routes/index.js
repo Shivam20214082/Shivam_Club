@@ -14,10 +14,9 @@ router.use(
 );
 
 // Home route
-// Home route
 router.get('/', async (req, res) => {
   try {
-    const posts = await Post.find();
+    const posts = await Post.find().sort({ createdAt: -1 }); 
     const authenticated = req.session.authenticated || false;
     const username = req.session.username || '';
     res.render('home', { posts, authenticated, username });
