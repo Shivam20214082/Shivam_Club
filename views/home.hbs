@@ -1,29 +1,40 @@
 {{#each posts}}
-  <div class="post">
+  <div class="post" data-post-id="{{_id}}">
     <div class="heading">
       <h2>Title: {{title}}</h2>
       {{!-- {{#if isAuthor}} --}}
-        <div class="edit" style="background-color: #4CAF50;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;">
-          <a href="/posts/edit/{{_id}}" style="color: white; text-decoration: none;">Edit</a>
+        <div class="edit">
+          <a href="/posts/edit/{{_id}}">Edit</a>
         </div>
       {{!-- {{/if}} --}}
       <div class="like">
         <form action="/posts/like/{{_id}}" method="POST" class="like-form">
           <input type="hidden" name="_method" value="PUT">
-          <input type="number" name="like-count" id="like-cnt" value="{{likes.length}}" readonly>
+          <input type="number" name="like-count" value="{{likes.length}}" readonly>
           <button type="submit" {{#if likedByUser}}disabled{{/if}}>Like</button>
         </form>
       </div>
     </div>
     <h3>Content:</h3>
-    <p style="margin-bottom: 20px;">{{content}}</p>
-    <p><b>Created at: </b>{{createdAt}}</p>
-    <p><b>Created By: </b>{{username}}</p>
+    <p>{{content}}</p>
+    <p><b>Created at:</b> {{createdAt}}</p>
+    <p><b>Created By:</b> {{username}}</p>
+
+    <div class="comments">
+      <div class="comments-heading">
+        <button class="show-comments-btn" data-post-id="{{_id}}">Show Comments</button>
+        <button class="hide-comments-btn hide" data-post-id="{{_id}}">Hide Comments</button>
+      </div>
+      <ul class="comment-list hide"></ul>
+      <button class="load-more-comments hide">Load More</button>
+    </div>
+
+    <div class="add-comment">
+      <form action="/posts/comment/{{_id}}" method="POST">
+        <input type="text" name="comment" class="comment-input" placeholder="Add a public comment..." required>
+        <button type="submit" class="comment-button">Comment</button>
+      </form>
+    </div>
   </div>
 {{else}}
   <p>No posts available</p>
