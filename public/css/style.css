@@ -198,6 +198,11 @@ a {
   font-size: 20px;
   margin: 0;
 }
+.like{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .like-form {
   width: 87%;
