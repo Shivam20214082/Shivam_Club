@@ -120,6 +120,12 @@ router.post('/comment/:postId', async (req, res) => {
   const { comment } = req.body;
   const { username } = req.session;
 
+  if (!username) {
+    // Username is not available, show alert message and redirect to home page
+    res.send('<script>alert("Please log in first"); window.location.href = "/";</script>');
+    return;
+  }
+
   console.log(username);
 
   try {
@@ -130,7 +136,7 @@ router.post('/comment/:postId', async (req, res) => {
       return;
     }
 
-    post.comments.push({ username, content: comment });
+    post.comments.unshift({ username, content: comment }); // Add the comment to the beginning of the comments array
     await post.save();
     res.redirect('/');
   } catch (error) {
@@ -138,6 +144,7 @@ router.post('/comment/:postId', async (req, res) => {
     res.redirect('/');
   }
 });
+
 
 
 

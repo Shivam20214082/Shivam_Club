@@ -20,7 +20,7 @@ hideCommentsButtons.forEach((button) => {
   });
 });
 
-/// Add an event listener to all "Show Comments" buttons
+// Add an event listener to all "Show Comments" buttons
 const showCommentsButtons = document.querySelectorAll(".show-comments-btn");
 showCommentsButtons.forEach((button) => {
   button.addEventListener("click", async function () {
@@ -49,8 +49,9 @@ showCommentsButtons.forEach((button) => {
       // Clear existing comments
       commentList.innerHTML = "";
 
-      // Sort comments by time in ascending order
-      comments.sort((a, b) => new Date(a.time) - new Date(b.time));
+      // Sort comments by time in descending order
+      comments.sort((a, b) => new Date(b.time) - new Date(a.time));
+      console.log(comments);
 
       // Render the comments
       comments.forEach((comment) => {
