@@ -1,25 +1,36 @@
 {{#each posts}}
   <div class="post" data-post-id="{{_id}}">
     <div class="heading">
-      <h2>Title: {{title}}</h2>
+      <div class="title" style="display: flex;
+      flex-direction:column">
+      <h1>Title: {{title}}</h1>
+      <p><b>Created By:</b> {{username}}</p>
+      </div>
       {{!-- {{#if isAuthor}} --}}
-        <div class="edit">
-          <a href="/posts/edit/{{_id}}">Edit</a>
-        </div>
       {{!-- {{/if}} --}}
-      <div class="like">
-        <form action="/posts/like/{{_id}}" method="POST" class="like-form">
-          <input type="hidden" name="_method" value="PUT">
-          <input type="number" name="like-count" value="{{likes.length}}" readonly>
-          <button type="submit" {{#if likedByUser}}disabled{{/if}}>Like</button>
-        </form>
+      <div class="interactions">
+        <div class="like">
+          <form action="/posts/edit/{{_id}}" method="GET" class="like-form" style="padding: 10px;">
+            <button type="submit" class="edit-button">
+              Edit
+            </button>
+          </form>
+          <div class="like">
+            <form action="/posts/like/{{_id}}" method="POST" class="like-form" style="padding: 10px;">
+              <input type="hidden" name="_method" value="PUT">
+              <button type="submit" {{#if likedByUser}}disabled{{/if}}>
+                Like<span class="like-count">({{likes.length}})</span>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-    <h3>Content:</h3>
-    <p>{{content}}</p>
-    <p><b>Created at:</b> {{createdAt}}</p>
-    <p><b>Created By:</b> {{username}}</p>
-
+    <div class="content">
+      <h3><b>Content:</b></h3>
+      <p>{{content}}</p>
+    </div>
+    <br><br>
     <div class="comments">
       <div class="comments-heading">
         <button class="show-comments-btn" data-post-id="{{_id}}">Show Comments</button>
@@ -28,13 +39,14 @@
       <ul class="comment-list hide"></ul>
       <button class="load-more-comments hide">Load More</button>
     </div>
-
     <div class="add-comment">
-      <form action="/posts/comment/{{_id}}" method="POST">
+      <form action="/posts/comment/{{_id}}" method="POST" style="display: flex;flex-direction:row;width:100%">
         <input type="text" name="comment" class="comment-input" placeholder="Add a public comment..." required>
         <button type="submit" class="comment-button">Comment</button>
       </form>
     </div>
+    <br>
+      <p style="text-align: center;"><b>Created at:</b> {{createdAt}}</p>
   </div>
 {{else}}
   <p>No posts available</p>

@@ -27,14 +27,14 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #333;
-  color: #fefefe;
+  background-color: #8f1d93;
+    color: #fff;
   transition: background-color 0.3s ease;
 }
 
-header:hover {
+/* header:hover {
   background-color: #444;
-}
+} */
 
 .logo a {
   font-size: 24px;
@@ -89,14 +89,11 @@ main {
   /* background-color: #fff; */
   padding: 20px;
   border-radius: 5px;
-  background-color: #ec8a8a;
+
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* transition: background-color 0.3s ease; */
 }
 
-main:hover {
-  /* background-color: #f44ce6; */
-}
 
 .post {
   width: 65%;
@@ -114,7 +111,7 @@ main:hover {
 
 footer {
   margin-top: auto;
-  background-color: #333;
+  background-color: #7A116F;
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -203,19 +200,27 @@ a {
 }
 
 .like-form {
+  width: 87%;
   display: flex;
   align-items: center;
+  /* padding: 10px; */
 }
 
-.like-form input[name="like-count"] {
-  width: 40px;
-  text-align: center;
-  border: none;
-  background-color: #f9f9f9;
-  font-weight: bold;
-}
 
 .like-form button {
+  width: 80%;
+
+  margin-left: 10px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.edit-button{
+  width: 80%;
   margin-left: 10px;
   background-color: #337ab7;
   color: #fff;
@@ -276,23 +281,18 @@ p {
 }
 
 .add-comment {
+  width: 100%;
   display: flex;
   align-items: center;
   margin-top: 20px;
   animation: fadeIn 0.5s ease, slideIn 0.5s ease;
 }
 
-.add-comment .comment-avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
 
 .add-comment input[type="text"] {
   width: 100%;
-  padding: 8px;
-  font-size: 14px;
+  margin-bottom: 0px;
+
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -311,7 +311,7 @@ p {
   background-color: #337ab7;
   color: #fff;
   border: none;
-  padding: 8px 16px;
+  /* padding: 8px ; */
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -347,6 +347,9 @@ p {
   .like-form button {
     margin-top: 10px;
   }
+  .edit-button{
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -373,16 +376,11 @@ p {
 /* Additional styles for aesthetics */
 
 .container {
-  background-color: #f2f2f2;
+  background-color: #ce7cc7;
 }
 
 body {
-  background-color: #f2f2f2;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
+  background-color: #ce7cc7;
 }
 
 .logo a {
@@ -390,7 +388,7 @@ header {
 }
 
 .login-btn a {
-  background-color: #4ebff3;
+  background-color: #701111;
   color: #fff;
   transition: background-color 0.3s ease;
 }
@@ -408,14 +406,14 @@ nav ul li a:hover {
 }
 
 .post {
-  background-color: #fff;
+  background-color:#f7c5f3;
   border: solid 1px #e0e0e0;
   border-radius: 10px;
 }
 
-.post:hover {
+/* .post:hover {
   border-color: #ccc;
-}
+} */
 
 .post h2 {
   color: #333;
@@ -434,15 +432,6 @@ nav ul li a:hover {
   color: #2b96c6;
 }
 
-.edit {
-  background-color: #4caf50;
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-.edit:hover {
-  background-color: #45a049;
-}
 
 .comments .comment-list .comment {
   background-color: #d4c4c4;
